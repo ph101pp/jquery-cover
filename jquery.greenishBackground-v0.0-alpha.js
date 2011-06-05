@@ -35,13 +35,13 @@ $.extend($().greenishBackground, {
 			img
 				.css({visibility:"hidden"})
 				.wrap($("<div class=\"greenishBackground\">").css($().greenishBackground.css.greenishBackground).data("img",image))
-				.wrap($("<div class=\"center\">").css($().greenishBackground.css.center))
-				.wrap($("<div class=\"wrapper\">").css($().greenishBackground.css.wrapper));
 				
 			if(!$.greenishBackground.interval) $.greenishBackground.interval=setInterval($.greenishBackground.loading, 100);
 		},
 		update : function (context) {
-			context=$(context).length >=1 && !context.target? context:$("body");
+			context=$(context).length >= 1 && !context.target?
+				context:
+				$("body");
 			$(".greenishBackground",context).each(function (){
 				var bg = $(window),
 					img = $("img",this),
@@ -94,7 +94,7 @@ $.extend($().greenishBackground, {
 				overflow:"visible",
 			},
 			greenishBackground:{
-				position:"relative",
+				position:"absolute",
 				top:0,
 				left:0,
 				width:"100%",
