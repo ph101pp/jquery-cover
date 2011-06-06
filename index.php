@@ -11,19 +11,8 @@
 		<script type="text/javascript">
 			(function($) {
 				$(document).ready(function() {
-				//	$("#background").greenishBackground();
-				
-				var context = $("body"),
-					background = $(".greenishBackground"),
-					wrapper = $(".wrapper"),
-					img = $("img"),
-				
-					
-				var imgHeight=386,
-					imgWidth=600;
-					marginTop=50/imgWidth*imgHeight; // Based on the fact that (marginTop 100% == width).
-					img.css("marginTop", -(marginTop)+"%");
-					
+					$("#background").greenishBackground();
+					$(window).resize($().greenishBackground.update);
 				});
 			})(jQuery);
 		</script>
@@ -44,10 +33,6 @@
 		</style>
 	</head>
 	<body>
-		<div class="greenishBackground height">
-				<div>
-					<img src="angular_momentum.jpg" id="background">
-				</div>
-		</div>
+		<img src="angular_momentum.jpg" id="background">
 	</body>
 </html>
