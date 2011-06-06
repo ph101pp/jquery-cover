@@ -1,0 +1,39 @@
+
+/* HEIGHT 100%*/
+.height.greenishBackground {
+	position:absolute;
+	height:100%;
+	width:100%;
+	overflow:hidden;	
+}
+.height.greenishBackground div {
+	position:relative;
+	height:100%;
+	width:10100%;
+	left:-5000%;
+	text-align:center;
+	
+}	
+.height.greenishBackground img {
+	display:inline;
+	height:100%;
+	margin-top:0 !important;
+}
+
+/* WIDTH 100%*/
+
+.width.greenishBackground {
+	position:abso100%lute;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+.width.greenishBackground div {
+	position:relative;
+	width:100%;
+	top:50%;
+}	
+.width.greenishBackground img {
+	display:block;
+	width:100%;
+}

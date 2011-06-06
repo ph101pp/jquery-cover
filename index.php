@@ -5,6 +5,7 @@
 		<title>greenishSlides</title>
 		<script type="text/javascript" src="jquery-1.5.1.min.js"></script>
 		<script type="text/javascript" src="jquery.greenishBackground-v0.0-alpha.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.greenishBackground-v0.0-alpha.css">
 
 <!--		<script type="text/javascript" src="jquery.jswipe-0.1.2.js"></script>-->
 		<script type="text/javascript">
@@ -16,60 +17,12 @@
 					background = $(".greenishBackground"),
 					wrapper = $(".wrapper"),
 					img = $("img"),
-					css= {
-						width: {
-							wrapperCSS : {
-								position:"relative",
-								width:"100%",
-							},
-							backgroundCSS : {
-								position:"absolute",
-								height:"100%",
-								width:"100%",
-								overflow:"hidden"
-							},
-							imgCSS : {
-								display:"inline",
-								width:"100%"
-							}
-						},
-						height: {
-							wrapperCSS : {
-								position:"relative",
-								height:"100%",
-								width:"10100%",
-								left:"-5000%",
-								textAlign:"center"
-							},
-							backgroundCSS : {
-								position:"absolute",
-								height:"100%",
-								width:"100%",
-								overflow:"hidden"
-							},
-							imgCSS : {
-								display:"inline",
-								height:"100%"
-							}						}
-					}
+				
 					
-					
-					
-					background.css(css.width.backgroundCSS);
-					wrapper.css(css.width.wrapperCSS);
-					img.css(css.width.imgCSS);
-					
-
-				var height=background.height(),
-					imgHeight=386,
-					imgWidth=600,
-					percent=height*100/imgHeight;
-					width=percent*imgWidth/100;
-					
-					console.log(height,imgHeight);
-					console.log(percent, width);
-					
-//					wrapper.css("width", width);
+				var imgHeight=386,
+					imgWidth=600;
+					marginTop=50/imgWidth*imgHeight; // Based on the fact that (marginTop 100% == width).
+					img.css("marginTop", -(marginTop)+"%");
 					
 				});
 			})(jQuery);
@@ -91,8 +44,8 @@
 		</style>
 	</head>
 	<body>
-		<div class="greenishBackground">
-				<div class="wrapper">
+		<div class="greenishBackground height">
+				<div>
 					<img src="angular_momentum.jpg" id="background">
 				</div>
 		</div>
