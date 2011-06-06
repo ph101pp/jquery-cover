@@ -2,7 +2,7 @@
 <html>
  	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-		<title>greenishSlides</title>
+		<title>greenishBackground</title>
 		<script type="text/javascript" src="jquery-1.5.1.min.js"></script>
 		<script type="text/javascript" src="jquery.greenishBackground-v0.0-alpha.js"></script>
 		<link rel="stylesheet" type="text/css" href="jquery.greenishBackground-v0.0-alpha.css">
@@ -11,8 +11,11 @@
 		<script type="text/javascript">
 			(function($) {
 				$(document).ready(function() {
-					$("#background").greenishBackground();
-					$(window).resize($().greenishBackground.update);
+					$("#background").greenishBackground( {
+						loading:false
+						
+					});
+					$(window).resize(function(){$("#background").greenishBackground("checkRatio")});
 				});
 			})(jQuery);
 		</script>

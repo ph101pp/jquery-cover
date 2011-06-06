@@ -1,11 +1,10 @@
-
-/* HEIGHT 100%*/
-.height.greenishBackground {
+.greenishBackground {
 	position:absolute;
 	height:100%;
 	width:100%;
 	overflow:hidden;	
 }
+/* HEIGHT 100%*/
 .height.greenishBackground div {
 	position:relative;
 	height:100%;
@@ -21,13 +20,6 @@
 }
 
 /* WIDTH 100%*/
-
-.width.greenishBackground {
-	position:abso100%lute;
-	height:100%;
-	width:100%;
-	overflow:hidden;
-}
 .width.greenishBackground div {
 	position:relative;
 	width:100%;
