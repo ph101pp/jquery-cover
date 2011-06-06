@@ -24,7 +24,7 @@ $.gB=$.fn.greenishBackground = function (method){
 	else throw "Error: The method \""+method+"\" doesn't exist in greenishBackground";
 	
 	return $(this).each(function(){
-		$().greenishBackground[call].apply(this, args);
+		$.gB[call].apply(this, args);
 	});
 };
 $.extend($.gB, {
