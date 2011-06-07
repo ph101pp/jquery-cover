@@ -12,10 +12,8 @@
 			(function($) {
 				$(document).ready(function() {
 					$("#background").greenishBackground( {
-						loading:false
-						
+					
 					});
-					$(window).resize(function(){$("#background").greenishBackground("checkRatio")});
 				});
 			})(jQuery);
 		</script>
