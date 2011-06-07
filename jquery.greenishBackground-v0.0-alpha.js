@@ -71,10 +71,8 @@ $.extend($.gB, {
 		for(hooks in opts.hooks) $.gB.bindHook(data,hooks,opts.hooks[hooks]);
 
 		data.img.src = $(this).attr("src");
-		$(this)
-			.wrap($("<div class=\"greenishBackground\"><div>"))
-			.parent().parent()
-			.data("data",data);
+		
+		$(this).wrap($("<div class=\"greenishBackground\"\><div\>"));
 			
 		if(opts.loading) $(this).css({visibility:"hidden"});
 		
@@ -82,7 +80,7 @@ $.extend($.gB, {
 
 		if(!$.gB.interval) $.gB.interval=setInterval($.gB._loading, 100);
 
-		data.opts.onWindowResize && $(window).resize(function(){data.self.greenishBackground("checkRatio")});
+		data.opts.checkWindowResize && $(window).resize(function(){data.self.greenishBackground("checkRatio")});
 	},
 ////////////////////////////////////////////////////////////////////////////////
 	checkRatio : function(data) {
@@ -140,12 +138,8 @@ $.extend($.gB, {
 	defaults : {
 		loading:true,
 		align:0,
-		hooks: {
-			preLoading : function () {console.log("preLoading")},
-			postLoading : function (){console.log("postLoading")},
-			ratioSwitch : function (){console.log("ratioSwitch")}
-		},
-		onWindowResize:true
+		hooks: {},
+		checkWindowResize:true
 	}
 });
 })(jQuery);
