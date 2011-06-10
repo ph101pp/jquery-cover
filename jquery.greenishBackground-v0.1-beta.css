@@ -18,18 +18,17 @@
 	height:100%;
 	margin-top:0 !important;
 }
-.height.left.greenishBackground div{
+.height.left.greenishBackground div {
 	position:absolute;
 	left:0px;
 	text-align:left;
 }
-.height.right.greenishBackground div{
+.height.right.greenishBackground div {
 	position:absolute;
 	right:0px;
 	left:auto;
 	text-align:right;
 }
-
 /* WIDTH 100%*/
 .width.greenishBackground div {
 	position:relative;
@@ -44,7 +43,7 @@
 	position:absolute;
 	top:0px;
 }
-.width.top.greenishBackground img{
+.width.top.greenishBackground img {
 	margin-top:0px !important;
 }
 .width.bottom.greenishBackground div {

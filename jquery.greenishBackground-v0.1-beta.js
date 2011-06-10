@@ -1,6 +1,7 @@
 /*! 
  * greenishBackground: Creates a fullscreen image that always covers the available space without stretching the image. (à la css3 cover)
  * v0.0 - alpha (8/5/2011)
+ * v0.1 - beta (10/6/2011)
  * http://www.philippadrian.com
  * 
  * Copyright (c) 2011 Philipp C. Adrian
@@ -33,7 +34,6 @@ $.gB=$.fn.greenishBackground = function (method){
 				$.gB.opts(data, method, true);
 				return;				
 			}
-
 			data = data || {
 				self:$(this),
 				hooks : []
@@ -70,7 +70,6 @@ $.extend($.gB, {
 		for(hooks in opts.hooks) $.gB.bindHook(data,hooks,opts.hooks[hooks]);
 
 		data.img.src = data.self.attr("src");
-		
 		data.self.wrap($("<div class=\"greenishBackground\"\><div\>"));
 		data.wrapper=data.self.parent().parent();
 		
@@ -118,7 +117,7 @@ $.extend($.gB, {
 			marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
 			data.self.css({"marginTop":-marginTop+"%"});
 			if(data.opts.loading) data.self.css({visibility:"visible"});
-			data.img.greenishBackground("_triggerHook","postLoading"); // hook
+			data.self.greenishBackground("_triggerHook","postLoading"); // hook
 			data.wrapper.greenishBackground("checkRatio");
 		});
 		if($.gB.complete) {
