@@ -33,20 +33,18 @@ $.gB=$.fn.greenishBackground = function (method){
 				$.gB.opts(data, method, true);
 				return;				
 			}
-			
+
 			data = data || {
 				self:$(this),
 				hooks : []
 			};
-
+			
 		if(call=="_init") {
 			data.opts=method=="_init"?Array.prototype.slice.call(arguments,1):method;
 			args=[data];
 		}
 		else args=[data].concat(args);
-		
 		img.data("data", data);
-
 		if(call=="_triggerHook") return $.gB[call].apply(img, args);
 		else try { 
 				$.gB[call].apply(img, args);
@@ -74,6 +72,7 @@ $.extend($.gB, {
 		data.img.src = data.self.attr("src");
 		
 		data.self.wrap($("<div class=\"greenishBackground\"\><div\>"));
+		data.wrapper=data.self.parent().parent();
 		
 		if(opts.backgroundPosition) {
 			wrapper=data.self.closest(".greenishBackground");
@@ -84,23 +83,25 @@ $.extend($.gB, {
 		}
 		
 		if(opts.loading) data.self.css({visibility:"hidden"});
-		
 		data.self.greenishBackground("_triggerHook","preLoading"); // hook
-
 		if(!$.gB.interval) $.gB.interval=setInterval($.gB._loading, 100);
 
-		data.opts.checkWindowResize && $(window).resize(function(){data.self.greenishBackground("checkRatio")});
+		data.opts.checkWindowResize && $(window)
+			.unbind("resize.greenishBackground")
+			.bind("resize.greenishBackground", function(){$(".greenishBackground").greenishBackground("checkRatio")});
 	},
 ////////////////////////////////////////////////////////////////////////////////
-	checkRatio : function(data) {
-		data.self.each(function (){
-			var wrapper = data.self.closest(".greenishBackground"),
-				switched = wrapper.hasClass("height");
-			wrapper.height()/wrapper.width() >= data.self.height()/data.self.width() ?
+	checkRatio : function() {
+		$(this).each(function (){
+		var img=$(this).is("img") ? $(this) : $("img", this),
+			data = img.data("data"),
+			wrapper = data.wrapper;
+			current = wrapper.hasClass("height") ? "height":"width";
+				
+			wrapper.height()/wrapper.width() >= data.ratio ?
 				wrapper.addClass("height").removeClass("width"):
 				wrapper.addClass("width").removeClass("height");
-		
-			switched != wrapper.hasClass("height") && $(this).greenishBackground("_triggerHook","ratioSwitch"); // hook
+			!wrapper.hasClass(current) && img.greenishBackground("_triggerHook","ratioSwitch"); // hook
 		});
 	},
 ////////////////////////////////////////////////////////////////////////////////
@@ -113,11 +114,12 @@ $.extend($.gB, {
 				$.gB.complete=false;
 				return;
 			}
+			data.ratio=image.height/image.width;
 			marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
 			data.self.css({"marginTop":-marginTop+"%"});
 			if(data.opts.loading) data.self.css({visibility:"visible"});
-			data.self.greenishBackground("_triggerHook","postLoading"); // hook
-			data.self.greenishBackground("checkRatio");
+			data.img.greenishBackground("_triggerHook","postLoading"); // hook
+			data.wrapper.greenishBackground("checkRatio");
 		});
 		if($.gB.complete) {
 			clearInterval($.gB.interval);

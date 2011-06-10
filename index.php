@@ -12,7 +12,13 @@
 			(function($) {
 				$(document).ready(function() {
 					$("#background").greenishBackground( {
-						loading:false
+						loading:false,
+						hooks: {
+							ratioSwitch:function () {console.log("ratioSwitch")},
+							preLoading:function () {console.log("preLoading")},
+							postLoading:function () {console.log("postLoading")}
+							
+						}
 					});
 				});
 			})(jQuery);
