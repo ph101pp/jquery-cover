@@ -12,7 +12,7 @@
 			(function($) {
 				$(document).ready(function() {
 					$("#background").greenishBackground( {
-						backgroundPosition:"top "
+						loading:false
 					});
 				});
 			})(jQuery);

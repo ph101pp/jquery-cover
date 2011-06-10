@@ -107,16 +107,17 @@ $.extend($.gB, {
 	_loading : function () {
 		$.gB.complete=true;
 		$(".greenishBackground").each(function (){
-			var data = $("img", this).data("data");
-			var image= data.img;
+			var data = $("img", this).data("data"),
+				image= data.img;
 			if(!image || !image.complete || image.height <= 0 || image.width <= 0) {
 				$.gB.complete=false;
 				return;
 			}
 			marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
-			$("img",this).css({visibility:"visible","marginTop":-marginTop+"%"});
-			$(this).greenishBackground("_triggerHook","postLoading"); // hook
-			$(this).greenishBackground("checkRatio");
+			data.self.css({"marginTop":-marginTop+"%"});
+			if(data.opts.loading) data.self.css({visibility:"visible"});
+			data.self.greenishBackground("_triggerHook","postLoading"); // hook
+			data.self.greenishBackground("checkRatio");
 		});
 		if($.gB.complete) {
 			clearInterval($.gB.interval);
