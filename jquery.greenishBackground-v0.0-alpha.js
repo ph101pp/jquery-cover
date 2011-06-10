@@ -63,20 +63,29 @@ $.extend($.gB, {
 		
 //		Extends defaults into opts.
 		var opts=$.gB.opts(data, data.opts, true),
-			css={};
+			css={},
+			wrapper;
 	//	data.opts.onWindowResize && $(window).resize(function(){data.self.greenishBackground("checkRatio")});
 		data.img = new Image();
 
 //		binding hooks to make them available.
 		for(hooks in opts.hooks) $.gB.bindHook(data,hooks,opts.hooks[hooks]);
 
-		data.img.src = $(this).attr("src");
+		data.img.src = data.self.attr("src");
 		
-		$(this).wrap($("<div class=\"greenishBackground\"\><div\>"));
-			
-		if(opts.loading) $(this).css({visibility:"hidden"});
+		data.self.wrap($("<div class=\"greenishBackground\"\><div\>"));
 		
-		$(this).greenishBackground("_triggerHook","preLoading"); // hook
+		if(opts.backgroundPosition) {
+			wrapper=data.self.closest(".greenishBackground");
+			if(opts.backgroundPosition.search(/top/i) >= 0) wrapper.addClass("top");
+			else if(opts.backgroundPosition.search(/bottom/i) >= 0) wrapper.addClass("bottom");
+			if(opts.backgroundPosition.search(/left/i) >= 0) wrapper.addClass("left");
+			else if(opts.backgroundPosition.search(/right/i) >= 0) wrapper.addClass("right");
+		}
+		
+		if(opts.loading) data.self.css({visibility:"hidden"});
+		
+		data.self.greenishBackground("_triggerHook","preLoading"); // hook
 
 		if(!$.gB.interval) $.gB.interval=setInterval($.gB._loading, 100);
 
@@ -84,7 +93,7 @@ $.extend($.gB, {
 	},
 ////////////////////////////////////////////////////////////////////////////////
 	checkRatio : function(data) {
-		$(this).each(function (){
+		data.self.each(function (){
 			var wrapper = data.self.closest(".greenishBackground"),
 				switched = wrapper.hasClass("height");
 			wrapper.height()/wrapper.width() >= data.self.height()/data.self.width() ?
@@ -137,7 +146,7 @@ $.extend($.gB, {
 ////////////////////////////////////////////////////////////////////////////////	
 	defaults : {
 		loading:true,
-		align:0,
+		backgroundPosition:false,
 		hooks: {},
 		checkWindowResize:true
 	}
