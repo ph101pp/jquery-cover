@@ -18,6 +18,17 @@
 	height:100%;
 	margin-top:0 !important;
 }
+.height.left.greenishBackground div{
+	position:absolute;
+	left:0px;
+	text-align:left;
+}
+.height.right.greenishBackground div{
+	position:absolute;
+	right:0px;
+	left:auto;
+	text-align:right;
+}
 
 /* WIDTH 100%*/
 .width.greenishBackground div {
@@ -28,4 +39,20 @@
 .width.greenishBackground img {
 	display:block;
 	width:100%;
+}
+.width.top.greenishBackground div {
+	position:absolute;
+	top:0px;
+}
+.width.top.greenishBackground img{
+	margin-top:0px !important;
+}
+.width.bottom.greenishBackground div {
+	position:absolute;
+	bottom:0px;
+}
+.width.bottom.greenishBackground img {
+	margin-top:0px !important;
+	position:absolute;
+	bottom:0px;
 }
