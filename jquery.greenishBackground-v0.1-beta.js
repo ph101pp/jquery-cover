@@ -74,11 +74,10 @@ $.extend($.gB, {
 		data.wrapper=data.self.parent().parent();
 		
 		if(opts.backgroundPosition) {
-			wrapper=data.self.closest(".greenishBackground");
-			if(opts.backgroundPosition.search(/top/i) >= 0) wrapper.addClass("top");
-			else if(opts.backgroundPosition.search(/bottom/i) >= 0) wrapper.addClass("bottom");
-			if(opts.backgroundPosition.search(/left/i) >= 0) wrapper.addClass("left");
-			else if(opts.backgroundPosition.search(/right/i) >= 0) wrapper.addClass("right");
+			if(opts.backgroundPosition.search(/top/i) >= 0) data.wrapper.addClass("top");
+			else if(opts.backgroundPosition.search(/bottom/i) >= 0) data.wrapper.addClass("bottom");
+			if(opts.backgroundPosition.search(/left/i) >= 0) data.wrapper.addClass("left");
+			else if(opts.backgroundPosition.search(/right/i) >= 0) data.wrapper.addClass("right");
 		}
 		
 		if(opts.loading) data.self.css({visibility:"hidden"});
