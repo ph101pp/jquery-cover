@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>jQuery Cover Plugin Example</title>
+		<link rel="stylesheet" type="text/css" href="jquery.cover.css">
+		<style>
+			body {
+				position:absolute;
+				background-color:#eeffee;
+				top:20px;
+				right:100px;
+				bottom:20px;
+				left:222px;
+			}
+
+
+		</style>
+
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="jquery.cover.js"></script>
+		<script type="text/javascript">
+			(function($) {
+				$(document).ready(function() {
+					$("#background").cover( {
+						callbacks: {
+							ratioSwitch:function () {console.log("ratioSwitch")},
+							preLoading:function () {console.log("preLoading")},
+							postLoading:function () {console.log("postLoading")}
+							
+						},
+						backgroundPosition:"center"
+					});
+				});
+			})(jQuery);
+		</script>
+		
+
+	</head>
+	<body>
+		<img src="angular_momentum.jpg" id="background">
+	</body>
+</html>

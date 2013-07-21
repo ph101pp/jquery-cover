@@ -1,11 +1,11 @@
-.greenishBackground {
+.greenishCover {
 	position:absolute;
 	height:100%;
 	width:100%;
 	overflow:hidden;	
 }
 /* HEIGHT 100%*/
-.height.greenishBackground div {
+.height.greenishCover div {
 	position:relative;
 	height:100%;
 	width:10100%;
@@ -13,44 +13,44 @@
 	text-align:center;
 	
 }	
-.height.greenishBackground img {
+.height.greenishCover img {
 	display:inline;
 	height:100%;
 	margin-top:0 !important;
 }
-.height.left.greenishBackground div {
+.height.left.greenishCover div {
 	position:absolute;
 	left:0px;
 	text-align:left;
 }
-.height.right.greenishBackground div {
+.height.right.greenishCover div {
 	position:absolute;
 	right:0px;
 	left:auto;
 	text-align:right;
 }
 /* WIDTH 100%*/
-.width.greenishBackground div {
+.width.greenishCover div {
 	position:relative;
 	width:100%;
 	top:50%;
 }	
-.width.greenishBackground img {
+.width.greenishCover img {
 	display:block;
 	width:100%;
 }
-.width.top.greenishBackground div {
+.width.top.greenishCover div {
 	position:absolute;
 	top:0px;
 }
-.width.top.greenishBackground img {
+.width.top.greenishCover img {
 	margin-top:0px !important;
 }
-.width.bottom.greenishBackground div {
+.width.bottom.greenishCover div {
 	position:absolute;
 	bottom:0px;
 }
-.width.bottom.greenishBackground img {
+.width.bottom.greenishCover img {
 	margin-top:0px !important;
 	position:absolute;
 	bottom:0px;
