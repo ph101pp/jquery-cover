@@ -26,7 +26,7 @@ So the code above takes an image:
 </body>
 ```
 
-and makes it cover its parent element completly. 
+and makes it cover its parent container element completly. 
 
 The new markup will look like this:
 
@@ -40,7 +40,7 @@ The new markup will look like this:
 </body>
 ```
 	
-1.	Methods
+2.	Methods
 ----------------
 	
 ``` javascript
@@ -76,7 +76,7 @@ $(".myBackgroundImage").slides("bindCallback", Function);
 > Registers or binds a callback function to a certain event. (see below). 
 
 
-2.	Options
+3.	Options
 ----------------
 
 Options can be set or changed by passing an object to the cover() function. This can be done on initialisation or afterwards to change any value.
@@ -128,7 +128,7 @@ callbacks: {																Default: {}
 
 -------------------------
 
-3.	Callbacks/Events
+4.	Callbacks/Events
 ----------------
 
 During the runtime of the plugin a bunch of callbacks are fired. 
