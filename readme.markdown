@@ -76,7 +76,7 @@ $(".myBackgroundImage").slides("bindCallback", Function);
 > Registers or binds a callback function to a certain event. (see below). 
 
 
-1.	Options
+2.	Options
 ----------------
 
 Options can be set or changed by passing an object to the cover() function. This can be done on initialisation or afterwards to change any value.
@@ -100,7 +100,8 @@ backgroundPosition:				String									Default: "center"
 > Works similar to the CSS property ``background-position``. 
 > 
 > Can be any of the following: __"center"__, __"top"__, __"right"__, __"bottom"__, __"left"__ 
-> or a combination of two like: __"top left"__ or __"bottom left"__.
+>
+> And also a combination of two like: __"top left"__ or __"bottom left"__.
 
 -------------------------	
 
@@ -127,7 +128,7 @@ callbacks: {																Default: {}
 
 -------------------------
 
-1.	Callbacks/Events
+3.	Callbacks/Events
 ----------------
 
 During the runtime of the plugin a bunch of callbacks are fired. 
@@ -160,7 +161,7 @@ This is a list of all the callbacks that are available at the moment (to find th
 "ratioSwitch"					function(data)					Context: $(".myBackgroundImage")
 ```
 
-> Called when the display type of the image changes.
+> Called when the display style of the image changes to either be ``width:100%`` or ``height:100%``.
 
 
 ###Add New Callback
