@@ -97,7 +97,10 @@ $(".myBackgroundImage").cover({
 backgroundPosition:				String									Default: "center"
 ```
 
-> Works similar to the CSS property ``background-position``. Can be any of the following: __"center"__, __"top"__, __"right"__, __"bottom"__, __"left"__ or > a combination of two like: __"top left"__ or __"bottom left"__.
+> Works similar to the CSS property ``background-position``. 
+> 
+> Can be any of the following: __"center"__, __"top"__, __"right"__, __"bottom"__, __"left"__ 
+> or a combination of two like: __"top left"__ or __"bottom left"__.
 
 -------------------------	
 
