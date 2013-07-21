@@ -2,6 +2,7 @@
 
 This plugin mimics the CSS3 `background-size:cover;` behavior and therefore makes it available in all mayor browsers down to IE7. 
 
+[Example](http://greenish.github.io/jquery-cover)
 
 #Documentation
 
