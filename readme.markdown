@@ -69,7 +69,7 @@ $(".myBackgroundImage").cover("update");
 -------------------------
 	
 ``` javascript
-$(".myBackgroundImage").slides("bindCallback", Function);				
+$(".myBackgroundImage").cover("bindCallback", Function);				
 ```
 
 > #### Bind a Callback/Event
