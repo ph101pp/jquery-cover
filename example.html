@@ -6,12 +6,14 @@
 		<link rel="stylesheet" type="text/css" href="jquery.cover.css">
 		<style>
 			body {
-				position:absolute;
+				margin:0;
+				padding:0;
+	/*			position:absolute;
 				background-color:#eeffee;
 				top:20px;
 				right:100px;
 				bottom:20px;
-				left:222px;
+				left:222px;*/
 			}
 
 
@@ -22,22 +24,12 @@
 		<script type="text/javascript">
 			(function($) {
 				$(document).ready(function() {
-					$("#background").cover( {
-						callbacks: {
-							ratioSwitch:function () {console.log("ratioSwitch")},
-							preLoading:function () {console.log("preLoading")},
-							postLoading:function () {console.log("postLoading")}
-							
-						},
-						backgroundPosition:"center"
-					});
+					$(".myBackgroundImage").cover();
 				});
 			})(jQuery);
 		</script>
-		
-
 	</head>
 	<body>
-		<img src="angular_momentum.jpg" id="background">
+		<img src="angular_momentum.jpg" class="myBackgroundImage">
 	</body>
 </html>

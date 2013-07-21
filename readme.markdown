@@ -1,6 +1,6 @@
 #jQuery Cover plugin
 
-This plugin mimics the CSS3 `background-size:cover;` behavior and therefore makes it available in all Browsers. 
+This plugin mimics the CSS3 `background-size:cover;` behavior and therefore makes it available in all mayor browsers down to IE7. 
 
 
 #Documentation
@@ -10,7 +10,7 @@ This plugin mimics the CSS3 `background-size:cover;` behavior and therefore make
 	
 To start off, get the newest version of the jQuery Cover plugin from Github and move it into your project folder.
 
-Include the file into your HTML and you're ready to go:
+Include the files (_JS AND CSS_) into your HTML and you're ready to go:
 
 ``` javascript
 jQuery(function(){
@@ -87,6 +87,7 @@ Here are all the possibile options (set to their __default values__):
 $(".myBackgroundImage").cover({
 		backgroundPosition:"center",
 		checkWindowResize:true,
+		loadHidden:true,
 		callbacks: {}
 	});
 ```
@@ -110,6 +111,14 @@ checkWindowResize:				boolean									Default: true
 ```
 
 > If true the plugin will automatically call ``$(".myBackgroundImage").cover("update");`` on window resize.
+
+-------------------------	
+
+``` javascript
+loadHidden:						boolean									Default: true
+```
+
+> If true the image is hidden until its displayed properly. This prevents some jittering.
 
 -------------------------	
 

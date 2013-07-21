@@ -82,7 +82,7 @@ $.extend(cover, {
 		for(callbacks in opts.callbacks) cover.bindCallback(data,callbacks,opts.callbacks[callbacks]);
 
 		data.img.src = data.self.attr("src");
-		data.self.wrap($("<div class=\"greenishCover\"\><div\>"));
+		data.self.wrap($("<div class=\"greenishCover height\"\><div\>"));
 		data.wrapper=data.self.parent().parent();
 		
 		if(opts.backgroundPosition) {
@@ -91,7 +91,8 @@ $.extend(cover, {
 			if(opts.backgroundPosition.search(/left/i) >= 0) data.wrapper.addClass("left");
 			else if(opts.backgroundPosition.search(/right/i) >= 0) data.wrapper.addClass("right");
 		}
-
+		
+		if(opts.loadHidden) data.self.css({visibility:"hidden"});
 		data.self.cover("_triggerCallback","preLoading"); // #CALLBACK
 		if(!cover.interval) cover.interval=setInterval(cover._loading, 100);
 
@@ -126,6 +127,7 @@ $.extend(cover, {
 			data.ratio=image.height/image.width;
 			marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
 			data.self.css({"marginTop":-marginTop+"%"});
+			if(data.opts.loadHidden) data.self.css({visibility:"visible"});
 			data.self.cover("_triggerCallback","postLoading"); // #CALLBACK
 			data.wrapper.cover("update");
 		});
@@ -156,9 +158,10 @@ $.extend(cover, {
 	},
 ////////////////////////////////////////////////////////////////////////////////	
 	defaults : {
-		backgroundPosition:"center",
+		backgroundPosition:false,
 		callbacks: {},
-		checkWindowResize:true
+		checkWindowResize:true,
+		loadHidden : true
 	}
 });
 })(jQuery);
