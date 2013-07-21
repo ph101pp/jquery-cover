@@ -10,7 +10,7 @@ This plugin mimics the CSS3 `background-size:cover;` behavior and therefore make
 	
 To start off, get the newest version of the jQuery Cover plugin from Github and move it into your project folder.
 
-Include the files (_JS AND CSS_) into your HTML and you're ready to go:
+Include the files (__JS AND CSS__) into your HTML and you're ready to go:
 
 ``` javascript
 jQuery(function(){
