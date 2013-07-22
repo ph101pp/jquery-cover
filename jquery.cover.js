@@ -1,5 +1,5 @@
 /*! 
- * jQuery Cover plugin - v1.0.0
+ * jQuery Cover plugin - v1.0.0 (https://github.com/greenish/jquery-cover)
  * 
  * Copyright (c) 2011 Philipp Adrian (www.philippadrian.com)
  *
