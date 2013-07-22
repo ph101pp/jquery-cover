@@ -1,6 +1,8 @@
 #jQuery Cover plugin
 
-This plugin mimics the CSS3 `background-size:cover;` behavior and therefore makes it available in all mayor browsers down to IE7. 
+This plugin mimics the CSS3 `background-size:cover;` behavior and therefore makes it available in all browsers.
+
+Compatible with IE 7.0+, Firefox 3+, Safari 3.1+, Opera 9.6+ and Google Chrome.
 
 [Example](http://greenish.github.io/jquery-cover)
 
@@ -27,7 +29,7 @@ So the code above takes an image:
 </body>
 ```
 
-and makes it cover its parent container element completly. 
+And makes it cover its parent container element completely. 
 
 The new markup will look like this:
 

@@ -1,0 +1,32 @@
+{
+    "name": "cover",
+    "title": "jQuery Cover",
+    "description": "CSS3 background-size:cover behavior cross browser compatible",
+    "keywords": [
+        "background",
+        "image",
+        "css3",
+        "background-size",
+        "cover",
+        "fullscreen"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Philipp Adrian",
+        "url": "http://www.philippadrian.com"
+    },
+
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "bugs": "https://github.com/greenish/jquery-cover/issues",
+    "homepage": "https://github.com/greenish/jquery-cover",
+    "docs": "https://github.com/greenish/jquery-cover",
+    "download": "https://github.com/greenish/jquery-cover",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
