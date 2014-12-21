@@ -27,6 +27,7 @@
 (function($) {
 ////////////////////////////////////////////////////////////////////////////////
 var cover=$.fn.cover = function (method){	
+	var call, args;
 	if(typeof(method) === 'object' || !method) {
 		args=arguments;
 		call="_init";
@@ -73,13 +74,11 @@ $.extend(cover, {
 	_init : function (data) {
 		
 //		Extends defaults into opts.
-		var opts=cover._opts(data, data.opts, true),
-			css={},
-			wrapper;
+		var opts=cover._opts(data, data.opts, true);
 		data.img = new Image();
 
 //		binding callbacks to make them available.
-		for(callbacks in opts.callbacks) cover.bindCallback(data,callbacks,opts.callbacks[callbacks]);
+		for(var callbacks in opts.callbacks) cover.bindCallback(data,callbacks,opts.callbacks[callbacks]);
 
 		data.img.src = data.self.attr("src");
 		data.self.wrap($("<div class=\"greenishCover height\"\><div\>"));
@@ -105,7 +104,7 @@ $.extend(cover, {
 		var that = $(this),
 			img=that.is("img") ? that : that.find("img"),
 			data = img.data("data"),
-			wrapper = data.wrapper;
+			wrapper = data.wrapper,
 			current = wrapper.hasClass("height") ? "height":"width",
 			newRatio = wrapper.height()/wrapper.width() >= data.ratio ? "height":"width";
 
@@ -125,7 +124,7 @@ $.extend(cover, {
 				return;
 			}
 			data.ratio=image.height/image.width;
-			marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
+			var marginTop=50/image.width*image.height; // Based on the fact that (marginTop 100% == width).
 			data.self.css({"marginTop":-marginTop+"%"});
 			if(data.opts.loadHidden) data.self.css({visibility:"visible"});
 			data.self.cover("_triggerCallback","postLoading"); // #CALLBACK
