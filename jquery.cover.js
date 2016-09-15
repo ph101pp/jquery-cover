@@ -79,8 +79,13 @@ $.extend(cover, {
 
 //		binding callbacks to make them available.
 		for(var callbacks in opts.callbacks) cover.bindCallback(data,callbacks,opts.callbacks[callbacks]);
-
-		data.img.src = data.self.attr("src");
+		
+		//if currentSrc is undefined (old browsers), use the src attribute
+		if ( typeof data.self.prop("currentSrc") === "undefined" ) data.img.src = data.self.attr("src");
+		else data.img.src = data.self.prop("currentSrc") ;//modern browser : use loaded image
+		
+		//console.log(data.img.src );
+	
 		data.self.wrap($("<div class=\"greenishCover height\"\><div\>"));
 		data.wrapper=data.self.parent().parent();
 		
